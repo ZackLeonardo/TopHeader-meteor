@@ -1,6 +1,19 @@
 <head>
   <title>top header</title>
+  <script type="text/javascript">
+    document.onclick = function (event) {
+      if (document.getElementById('login-popup').className  != "hidden") {
+        event = event ? event : window.event;
+        var obj = event.srcElement ? event.srcElement : event.target;
+        if(obj.tagName){
+          document.getElementById('login-popup').className="hidden";
+        }
+      }
+    }
+  </script>
 </head>
+
+
 
 <body>
   <div id="render-target">

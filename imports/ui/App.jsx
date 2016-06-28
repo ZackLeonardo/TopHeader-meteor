@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Nav from "./Nav.jsx";
 import SecNav from "./SecNav.jsx";
+import CustomMenu from "./CustomMenu.jsx";
 
 class App extends Component {
 
@@ -25,6 +26,8 @@ class App extends Component {
         </Nav>
         <SecNav>
         </SecNav>
+        <CustomMenu>
+        </CustomMenu>
       </div>
     );
   }

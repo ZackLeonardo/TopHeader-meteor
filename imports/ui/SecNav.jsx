@@ -1,20 +1,26 @@
 import React, { Component, PropTypes} from "react";
+import ReactDOM from "react-dom";
 
 export default class SecNav extends Component {
-
   showLogin(){
-    //  alert(document.getElementById("login-popup").className);
-    document.getElementById("login-popup").className = "fadeInDown";
+    this.setState({loginPopup: !this.state.loginPopup});
+  }
+
+  constructor(props){
+      super(props);
+      this.state = {
+        loginPopup: false,
+      };
   }
 
   render() {
     return (
       <div className="secondary-nav">
         <nav>
-          <a id="login" onClick={this.showLogin} className="menu-secondary">Login</a>
+          <a id="login" onClick={this.showLogin.bind(this)} className="menu-secondary">Login</a>
           <a id="register" href="/sign-up" className="menu-secondary">Register</a>
         </nav>
-        <div id="login-popup" className="hidden">
+        <div ref="loginPopup" id="login-popup"  className={this.state.loginPopup? "fadeInDown" : "hidden"}>
           <div className="form-login">
             <h3>Login</h3>
             <form>

@@ -1,3 +1,4 @@
+// 大屏幕下，功能菜单导航－－横行
 import React, { Component, PropTypes } from 'react';
 
 export default class Nav extends Component {
@@ -10,7 +11,7 @@ export default class Nav extends Component {
 
   render() {
     return (
-      <nav>
+      <nav className="primary-menu">
         {this.renderItems()}
       </nav>
     );

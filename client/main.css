@@ -20,7 +20,7 @@ menu, nav, section {
 }
 
 body {
-    line-height: 1
+    line-height: 1;
 }
 
 ol, ul, li{
@@ -74,7 +74,7 @@ a{
   margin-top: 10px
 }
 
-.container-header .menu-main {
+.container-header .primary-menu .menu-main {
   margin-right: 20px;
   text-decoration: none;
   font-family: 'Helvetica';
@@ -86,24 +86,37 @@ a{
   display: inline-block
 }
 
-.menu-main:hover,
-.menu-main:focus,
-.menu-main:active {
+.primary-menu .menu-main:hover,
+.primary-menu .menu-main:focus,
+.primary-menu .menu-main:active,
+.primary-menu-mobile .menu-main:hover span,
+.primary-menu-mobile .menu-main:focus span,
+.primary-menu-mobile .menu-main:active span,
+.primary-menu-mobile a:hover,
+.primary-menu-mobile a:focus,
+.primary-menu-mobile a:active,
+.primary-menu-mobile .has-sub-menu .sub-menu-secondary li:hover a
+{
   color: #de4f4f
 }
 
-.menu-main:hover ul,
-.menu-main:focus ul,
-.menu-main:active ul {
+/*.primary-menu .menu-main .sub-menu-secondary li:hover,
+ {
+    background: #a83636
+}*/
+
+.primary-menu .menu-main:hover ul,
+.primary-menu .menu-main:focus ul,
+.primary-menu .menu-main:active ul {
   display: block
 }
 
-.has-sub-menu {
+.primary-menu .menu-main.has-sub-menu {
   padding-bottom: 0px;
   position: relative
 }
 
-.has-sub-menu span {
+.primary-menu .menu-main.has-sub-menu span {
   display: inline-block;
   width: 100%;
   margin-bottom: 5px
@@ -113,7 +126,7 @@ a{
     display: none
 }
 
-.menu-main .sub-menu-secondary{
+.primary-menu .menu-main .sub-menu-secondary{
   /*list-style-type: none;
   margin: -10px auto;
   padding: 0;*/
@@ -126,7 +139,7 @@ a{
 
 }
 
-.menu-main .sub-menu-secondary li {
+.primary-menu .menu-main .sub-menu-secondary li {
   line-height: 40px;
   font-size: 11px;
   height: 35px;
@@ -138,24 +151,38 @@ a{
   font-family: 'ProximaNova-Regular', arial, sans-serif
 }
 
-.menu-main .sub-menu-secondary li:hover {
+.primary-menu-mobile .menu-main .sub-menu-secondary li {
+  line-height: 40px;
+  font-size: 12px;
+  height: 35px;
+  letter-spacing: 1px;
+  transition: all 0.05s linear;
+  -moz-transition: all 0.05s linear;
+  -webkit-transition: all 0.05s linear;
+  padding-left: 5px;
+  font-family: 'ProximaNova-Regular', arial, sans-serif
+}
+
+.primary-menu .menu-main .sub-menu-secondary li:hover{
     background: #a83636
 }
 
-.menu-main .sub-menu-secondary li a {
+
+.primary-menu .menu-main .sub-menu-secondary li a,
+.primary-menu-mobile .menu-main .sub-menu-secondary li a {
   color: #fff;
   display: inline-block;
   cursor: pointer;
   width: 100%
 }
 
-.showsubMenu{
+.primary-menu .showsubMenu{
   background-color: #de4f4f;
   display: block;
 
 }
 
-.menu-child{
+.primary-menu .menu-child{
   color: #fff;
   display: inline-block;
   cursor: pointer;
@@ -343,6 +370,39 @@ a{
 .fadeInDown {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown
+}
+
+@-webkit-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight
 }
 
 .icon-custom-menu {
@@ -540,12 +600,68 @@ a{
 
 
 
+
+/*============*/
+.primary-menu-mobile {
+  display: none;
+  background-color: #2b2e39;
+  float: right;
+  font-family: 'Helvetica';
+  font-size: 14px;
+  width: 220px;
+}
+
+.primary-menu-mobile .menu-main{
+    display: block;
+    border-bottom: 2px groove rgba(177, 179, 190, 0.2);
+    margin-bottom: 0px;
+    padding: 0px 0px 0px 25px;
+    color: #b1b3be;
+}
+
+.primary-menu-mobile .has-sub-menu {
+    position: relative
+    padding-bottom: 0px;
+}
+
+.primary-menu-mobile .has-sub-menu span {
+    width: 100%;
+}
+
+.primary-menu-mobile .has-sub-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.primary-menu-mobile ul.sub-menu-secondary li .menu-child {
+    padding-left: 15px;
+    margin-bottom: 0px;
+    color: #b1b3be;
+}
+
+.mobile-menu {
+    display: block;
+    margin: 0px;
+    border-bottom: 2px groove rgba(177, 179, 190, 0.2);
+    padding: 0px 0px 0px 25px;
+    color: #b1b3be;
+}
+
+
+
+/*=============*/
+
+
 @media (max-width: 840px) {
   .icon-custom-menu {
     display: inline-block;
   }
 
-  .container-header .menu-main {
+  .primary-menu-mobile {
+    display: inline-block;
+  }
+
+  .container-header .primary-menu .menu-main {
       display: none
   }
 

@@ -1,3 +1,4 @@
+// 大屏幕下，第二导航－－登录／注册
 import React, { Component, PropTypes} from "react";
 import ReactDOM from "react-dom";
 

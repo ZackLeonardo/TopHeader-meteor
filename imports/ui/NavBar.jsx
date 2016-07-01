@@ -1,3 +1,4 @@
+// 大屏幕下，功能菜单导航－－纵向
 import React, { Component, PropTypes } from "react";
 
 export default class NavBar extends Component {
@@ -9,11 +10,18 @@ export default class NavBar extends Component {
   }
 
   render(){
-    return (
-      <nav>
-        {this.renderItems()}
-      </nav>
-    );
+    if (this.props.showNavBar){
+      return (
+        <nav className="primary-menu-mobile">
+          {this.renderItems()}
+          <a href="/sign-in" className="mobile-menu">LOGIN</a>
+          <a href="/sign-up" className="mobile-menu">REGISTER</a>
+        </nav>
+      );
+    }else {
+      return null;
+    }
+
   }
 }
 
@@ -23,17 +31,17 @@ class Item extends Component{
       return (
         <a href={"/" + this.props.item.text} className="menu-main has-sub-menu">
           <span>{this.props.item.text}</span>
-            <ul className="sub-menu-secondary">
-              {this.props.item.submenus.map((menu, index) => {
-                return (
-                  <li key={this.props.item._id + index}>
-                    <a href={"/"+menu} className="menu-child">
-                      {menu}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+          <ul className="sub-menu-secondary">
+            {this.props.item.submenus.map((menu, index) => {
+              return (
+                <li key={this.props.item._id + index}>
+                  <a href={"/"+menu} className="menu-child">
+                    {menu}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </a>
       );
     }else {

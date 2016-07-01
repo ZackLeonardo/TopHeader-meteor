@@ -1,7 +1,7 @@
 
 
 # TopHeader Component
-This is a responsive layout web top header component, made by meteor and react.
+This is a responsive layout web top header component, made by meteor(not yet further used) and react.
 
 ## Usage
 in App.jsx file, u can:

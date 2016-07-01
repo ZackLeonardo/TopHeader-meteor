@@ -16,9 +16,9 @@ class App extends Component {
 
   renderNav() {
     return [
-      { _id: 1, text: 'DEVELPOERS', submenus: ['INSTALL', 'TUTORIALS'] },
-      { _id: 2, text: 'SHOWCASE', submenus: null},
-      { _id: 3, text: 'SOUTIONS', submenus: ['INSTALL', 'TUTORIALS'] },
+      { _id: 1, text: 'MENU1', submenus: ['SUBMENU1', 'SUBMENU2'] },
+      { _id: 2, text: 'MENU2', submenus: null},
+      { _id: 3, text: 'MENU3', submenus: ['SUBMENU3', 'SUBMENU4', 'SUBMENU5'] },
     ];
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
       <div className="container-header">
         <div className="logo-company">
           <a href="/">
-            <img id="logo-meteor-home" src="https://d14xs1qewsqjcd.cloudfront.net/assets/logo-diff.svg" alt="Home Page"/>
+            <img id="logo-meteor-home" src="" alt="Home Page"/>
           </a>
         </div>
         <Nav navItems={this.renderNav()}>
